@@ -1,0 +1,37 @@
+{
+    "name": "vuravel/catalog",
+    "description": "Vue.js & Laravel Catalog - The browsing and filtering capabilities",
+    "keywords": [
+        "vue","vuejs","vue-js",
+        "laravel","php","framework","cms",
+        "vuravel",
+        "catalog","catalogs",
+        "gallery","galleries",
+        "browsing","filtering","filters","ajax",
+        "button","buttons",
+        "modal","modals"
+    ],
+    "license": "MIT",
+    "require": {
+    	"php": ">=7.1.0",
+        "laravel/framework": ">=5.6.0",
+        "vuravel/elements": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vuravel\\Catalog\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vuravel\\Catalog\\VuravelCatalogServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

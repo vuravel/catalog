@@ -1,0 +1,13 @@
+.vlTable{
+	margin-bottom: 0;
+	tbody{
+		>tr{
+			&:hover{
+				background-color: ghostwhite;
+			}
+			&.vlActive{
+				background-color: #e9f1ff;
+			}
+		}
+	}
+}

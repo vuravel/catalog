@@ -1,0 +1,15 @@
+{
+  "name": "vuravel-catalog",
+  "version": "1.0.0",
+  "description": "Vuravel catalog components and mixins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Seba Hachem <contact@vuravel.com> (https://vuravel.com)",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.7",
+    "vue-masonry": "^0.11.7"
+  }
+}
