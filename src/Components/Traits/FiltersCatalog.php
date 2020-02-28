@@ -32,7 +32,7 @@ trait FiltersCatalog {
     public function filtersCatalog($filterKey = null, $operator = null)
     {
         $this->filterBy($filterKey, $operator);
-        return $this->refreshCatalog(); //filtering works for it's own catalog only
+        return $this->refreshCatalog(null, 1); //filtering works for it's own catalog only
     }
 
     /**
@@ -49,7 +49,7 @@ trait FiltersCatalog {
     {
         $this->filterBy($filterKey, $operator);
         return $this->onInput( function($e) {
-            $e->refreshCatalog()  //filtering works for it's own catalog only
+            $e->refreshCatalog(null, 1)  //filtering works for it's own catalog only
                ->debounce();
         });
     }

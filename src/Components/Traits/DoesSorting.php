@@ -17,10 +17,10 @@ trait DoesSorting {
         });
     }
 
-    public function refreshCatalog($catalogId = null)
+    public function refreshCatalog($catalogId = null, $page = null)
     {
-        return $this->updateDefaultTrigger(function($e) use($catalogId) {
-            $e->refreshCatalog($catalogId);
+        return $this->updateDefaultTrigger(function($e) use($catalogId, $page) {
+            $e->refreshCatalog($catalogId, $page);
         });
     }
 
