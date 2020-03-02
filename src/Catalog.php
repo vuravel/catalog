@@ -58,7 +58,7 @@ class Catalog extends Component implements Routable
      * @var array
      */
     public $orderBy = [];
-    public $record = false; //Hack to allow for using ->prepareComponents($catalog) for filtering...
+    public $record = false; //To allow using ->prepareComponents($catalog) for filtering...
     public static $model; //I would use in query() instead. Will deprecate.
     public $with; //If catalog needs pre-loading relations with $model
     public $withCount; //If catalog needs pre-loading relation count with $model
