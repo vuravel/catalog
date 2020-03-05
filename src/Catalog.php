@@ -49,9 +49,7 @@ class Catalog extends Component implements Routable
     public $paginator;
     
     public $filters;
-    public $filtersPlacement = [
-        'top', 'left', 'bottom', 'right'
-    ];
+    public $filtersPlacement = [ 'top', 'left', 'bottom', 'right' ];
     
     /**
      * Default order of the items[ col1 => ASC|DESC, col2 => ASC|DESC ]
@@ -82,7 +80,7 @@ class Catalog extends Component implements Routable
 
     public function card($item)
     {
-        return $item;
+        return [];
     }
 
     //Catalog filters
@@ -205,9 +203,10 @@ class Catalog extends Component implements Routable
     {
         foreach ($this->filtersPlacement as $placement) {
 
-            $this->filters[$placement] = collect(
-                    is_array($filters = $this->{$placement}()) ? $filters : [$filters]
-                )->each(function($filter){
+            if( !(($filters = $this->{$placement}()) instanceOf LaravelCollection) )
+                $filters = collect(is_array($filters) ? $filters : [$filters]);
+
+            $this->filters[$placement] = $filters->filter()->each(function($filter){
                     $filter->prepareComponent($this);
                 });
                 

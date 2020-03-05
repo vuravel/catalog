@@ -10,7 +10,7 @@ trait HandlesBrowsing {
      */
     public function handleBrowse()
     {
-        collect($this->getFieldComponents())->each(function($field) {
+        collect($this->getFieldComponents($this))->each(function($field) {
 
             if($field->getFilterValue() && $field->name !== 'vuravelSort')
                 $this->paginator->handleFilter($field);
@@ -22,15 +22,12 @@ trait HandlesBrowsing {
         return $this;
     }
 
-
-
-
-    public function getFieldComponents()
+    public function getFieldComponents($catalog)
     {
         //double flatMap
-        return collect($this->filters)->flatMap->flatMap( function($component) {
+        return collect($this->filters)->flatMap->flatMap( function($component) use ($catalog) {
 
-            return $component->getFieldComponents();
+            return $component->getFieldComponents($catalog);
 
         })->filter();
     }
